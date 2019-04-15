@@ -9,4 +9,5 @@ public class Police {
         this.x = x;
         this.y = y;
     }
+
 }
