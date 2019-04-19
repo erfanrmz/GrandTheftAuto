@@ -23,10 +23,14 @@ public class Main {
         }
         while (true)
         {
+            for (int i = 0 ; i <= losSantos.getColumn(); i++)
+                System.out.print("==");
+            System.out.println();
             losSantos.PrintGround();
             for (int i = 0 ; i <= losSantos.getColumn(); i++)
                 System.out.print("==");
             System.out.println();
+            System.out.println("\n\n\n");
             if (losSantos.busted(polices))
             {
                 System.out.println("WASTED");
