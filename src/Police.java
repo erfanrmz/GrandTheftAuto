@@ -3,8 +3,8 @@ import java.util.Random;
 public class Police {
     private int x;
     private int y;
-    private int lastX;
-    private int lastY;
+    private int lastX = 2000;
+    private int lastY = 2000;
 
     public Police(int x, int y) {
         this.x = x;

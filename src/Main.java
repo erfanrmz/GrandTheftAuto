@@ -23,6 +23,10 @@ public class Main {
         }
         while (true)
         {
+            losSantos.PrintGround();
+            for (int i = 0 ; i <= losSantos.getColumn(); i++)
+                System.out.print("==");
+            System.out.println();
             if (losSantos.busted(polices))
             {
                 System.out.println("WASTED");
@@ -32,10 +36,9 @@ public class Main {
             for (int i = 0 ; i < losSantos.getPoliceNumb() ;i++)
                 polices[i].movement(losSantos);
             michael.movement(losSantos);
-            losSantos.PrintGround();
-            System.out.println("==================================================");
+
             try {
-                TimeUnit.SECONDS.sleep(5);
+                TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
