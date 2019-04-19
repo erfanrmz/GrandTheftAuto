@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
-
+import java.util.concurrent.TimeUnit;
 public class Main {
 
     public static void main(String[] args) {
@@ -21,9 +21,20 @@ public class Main {
             polices[i] = new Police(x,y);
             losSantos.setGround(x,y,2);
         }
-        losSantos.PrintGround();
-        losSantos.CheckSeen();
-        System.out.println(losSantos.CheckSeen());
+        while (true)
+        {
+            losSantos.CheckSeen();
+            for (int i = 0 ; i < losSantos.getPoliceNumb() ;i++)
+                polices[i].movement(losSantos);
+            michael.movement(losSantos);
+            losSantos.PrintGround();
+            System.out.println("==================================================");
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 }

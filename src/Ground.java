@@ -17,6 +17,14 @@ public class Ground {
                 ground[i][j] = 0;
     }
 
+    public int getXthief() {
+        return xthief;
+    }
+
+    public int getYthief() {
+        return ythief;
+    }
+
     public Boolean getSeen() {
         return seen;
     }
@@ -34,7 +42,7 @@ public class Ground {
     }
 
     public void setGround(int x, int y, int type) {
-        ground[x][y] = type;
+        ground[x][y] += type;
         if (type == 1) {
             xthief = x;
             ythief = y;
@@ -53,72 +61,72 @@ public class Ground {
                     c = '-';
                 else if (ground[i][j] == 1)
                     c = 'T';
-                else if (ground[i][j] == 2)
+                else if (ground[i][j]%2 == 0)
                     c = 'P';
                 System.out.print("|" + c + "|");
             }
             System.out.println();
         }
     }
-    //TODO Seen
     public Boolean CheckSeen() {
-        if (xthief - 2 >= 0 && ythief - 2 >= 0 && ground[xthief - 2][ythief - 2] == 2)
-            return true;
-        else if (xthief - 2 >= 0 && ythief - 1 >= 0 && ground[xthief - 2][ythief - 1] == 2)
-            return true;
-        else if (xthief - 2 >= 0 && ground[xthief - 2][ythief] == 2)
-            return true;
-        else if (xthief - 2 >= 0 && ythief + 1 < column && ground[xthief - 2][ythief + 1] == 2)
-            return true;
-        else if (xthief - 2 >= 0 && ythief + 2 < column && ground[xthief - 2][ythief + 2] == 2)
-            return true;
+        seen = false;
+        if (xthief - 2 >= 0 && ythief - 2 >= 0 && ground[xthief - 2][ythief - 2]%2 == 0)
+            seen = true;
+        else if (xthief - 2 >= 0 && ythief - 1 >= 0 && ground[xthief - 2][ythief - 1]%2 == 0)
+            seen = true;
+        else if (xthief - 2 >= 0 && ground[xthief - 2][ythief]%2 == 0)
+            seen = true;
+        else if (xthief - 2 >= 0 && ythief + 1 < column && ground[xthief - 2][ythief + 1]%2 == 0)
+            seen = true;
+        else if (xthief - 2 >= 0 && ythief + 2 < column && ground[xthief - 2][ythief + 2]%2 == 0)
+            seen = true;
 
-        else if (xthief - 1 >= 0 && ythief - 2 >= 0 && ground[xthief - 1][ythief - 2] == 2)
-            return true;
-        else if (xthief - 1 >= 0 && ythief - 1 >= 0 && ground[xthief - 1][ythief - 1] == 2)
-            return true;
-        else if (xthief - 1 >= 0 && ground[xthief - 1][ythief] == 2)
-            return true;
-        else if (xthief - 1 >= 0 && ythief + 1 < column && ground[xthief - 1][ythief + 1] == 2)
-            return true;
-        else if (xthief - 1 >= 0 && ythief + 2 < column && ground[xthief - 1][ythief + 2] == 2)
-            return true;
+        else if (xthief - 1 >= 0 && ythief - 2 >= 0 && ground[xthief - 1][ythief - 2]%2 == 0)
+            seen = true;
+        else if (xthief - 1 >= 0 && ythief - 1 >= 0 && ground[xthief - 1][ythief - 1]%2 == 0)
+            seen = true;
+        else if (xthief - 1 >= 0 && ground[xthief - 1][ythief]%2 == 0)
+            seen = true;
+        else if (xthief - 1 >= 0 && ythief + 1 < column && ground[xthief - 1][ythief + 1]%2 == 0)
+            seen = true;
+        else if (xthief - 1 >= 0 && ythief + 2 < column && ground[xthief - 1][ythief + 2]%2 == 0)
+            seen = true;
 
-        else if ( ythief - 2 >= 0 && ground[xthief][ythief - 2] == 2)
-            return true;
-        else if ( ythief - 1 >= 0 && ground[xthief][ythief - 1] == 2)
-            return true;
-        else if (ythief + 1 < column && ground[xthief][ythief + 1] == 2)
-            return true;
-        else if (ythief + 2 < column && ground[xthief][ythief + 2] == 2)
-            return true;
+        else if ( ythief - 2 >= 0 && ground[xthief][ythief - 2]%2 == 0)
+            seen = true;
+        else if ( ythief - 1 >= 0 && ground[xthief][ythief - 1]%2 == 0)
+            seen = true;
+        else if (ythief + 1 < column && ground[xthief][ythief + 1]%2 == 0)
+            seen = true;
+        else if (ythief + 2 < column && ground[xthief][ythief + 2]%2 == 0)
+            seen = true;
 
-        else if (xthief + 1 < row && ythief - 2 >= 0 && ground[xthief + 1][ythief - 2] == 2)
-            return true;
-        else if (xthief + 1 < row && ythief - 1 >= 0 && ground[xthief + 1][ythief - 1] == 2)
-            return true;
-        else if (xthief + 1 < row && ground[xthief + 1][ythief] == 2)
-            return true;
-        else if (xthief + 1 < row && ythief + 1 < column && ground[xthief + 1][ythief + 1] == 2)
-            return true;
-        else if (xthief + 1 < row && ythief + 2 < column && ground[xthief + 1][ythief + 2] == 2)
-            return true;
+        else if (xthief + 1 < row && ythief - 2 >= 0 && ground[xthief + 1][ythief - 2]%2 == 0)
+            seen = true;
+        else if (xthief + 1 < row && ythief - 1 >= 0 && ground[xthief + 1][ythief - 1]%2 == 0)
+            seen = true;
+        else if (xthief + 1 < row && ground[xthief + 1][ythief]%2 == 0)
+            seen = true;
+        else if (xthief + 1 < row && ythief + 1 < column && ground[xthief + 1][ythief + 1]%2 == 0)
+            seen = true;
+        else if (xthief + 1 < row && ythief + 2 < column && ground[xthief + 1][ythief + 2]%2 == 0)
+            seen = true;
 
-        else if (xthief + 2 < row && ythief - 2 >= 0 && ground[xthief + 2][ythief - 2] == 2)
-            return true;
-        else if (xthief + 2 < row && ythief - 1 >= 0 && ground[xthief + 2][ythief - 1] == 2)
-            return true;
-        else if (xthief + 2 < row && ground[xthief + 2][ythief] == 2)
-            return true;
-        else if (xthief + 2 < row && ythief + 1 < column && ground[xthief + 2][ythief + 1] == 2)
-            return true;
-        else if (xthief + 2 < row && ythief + 2 < column && ground[xthief + 2][ythief + 2] == 2)
-            return true;
-        return false;
+        else if (xthief + 2 < row && ythief - 2 >= 0 && ground[xthief + 2][ythief - 2]%2 == 0)
+            seen = true;
+        else if (xthief + 2 < row && ythief - 1 >= 0 && ground[xthief + 2][ythief - 1]%2 == 0)
+            seen = true;
+        else if (xthief + 2 < row && ground[xthief + 2][ythief]%2 == 0)
+            seen = true;
+        else if (xthief + 2 < row && ythief + 1 < column && ground[xthief + 2][ythief + 1]%2 == 0)
+            seen = true;
+        else if (xthief + 2 < row && ythief + 2 < column && ground[xthief + 2][ythief + 2]%2 == 0)
+            seen = true;
+        return seen;
     }
     public boolean checkEmptiness(int x, int y) {
         if (ground[x][y] == 0)
-            return true;
+            seen = true;
         return false;
     }
 }
