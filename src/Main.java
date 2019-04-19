@@ -22,9 +22,8 @@ public class Main {
             losSantos.setGround(x,y,2);
         }
         losSantos.PrintGround();
-        while (true)
-        {
-            losSantos.move
-        }
+        losSantos.CheckSeen();
+        System.out.println(losSantos.CheckSeen());
+
     }
 }

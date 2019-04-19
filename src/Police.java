@@ -12,12 +12,12 @@ public class Police {
     }
     public void movement(Ground ground)
     {
-        if (ground.getSeen())
+//        if (ground.getSeen())
             //TODO
-        else
-        {
-z
-        }
+//        else
+//        {
+
+//        }
 
     }
 

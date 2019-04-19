@@ -61,9 +61,61 @@ public class Ground {
         }
     }
     //TODO Seen
-    //public Boolean CheckSeen() {
+    public Boolean CheckSeen() {
+        if (xthief - 2 >= 0 && ythief - 2 >= 0 && ground[xthief - 2][ythief - 2] == 2)
+            return true;
+        else if (xthief - 2 >= 0 && ythief - 1 >= 0 && ground[xthief - 2][ythief - 1] == 2)
+            return true;
+        else if (xthief - 2 >= 0 && ground[xthief - 2][ythief] == 2)
+            return true;
+        else if (xthief - 2 >= 0 && ythief + 1 < column && ground[xthief - 2][ythief + 1] == 2)
+            return true;
+        else if (xthief - 2 >= 0 && ythief + 2 < column && ground[xthief - 2][ythief + 2] == 2)
+            return true;
 
-    //}
+        else if (xthief - 1 >= 0 && ythief - 2 >= 0 && ground[xthief - 1][ythief - 2] == 2)
+            return true;
+        else if (xthief - 1 >= 0 && ythief - 1 >= 0 && ground[xthief - 1][ythief - 1] == 2)
+            return true;
+        else if (xthief - 1 >= 0 && ground[xthief - 1][ythief] == 2)
+            return true;
+        else if (xthief - 1 >= 0 && ythief + 1 < column && ground[xthief - 1][ythief + 1] == 2)
+            return true;
+        else if (xthief - 1 >= 0 && ythief + 2 < column && ground[xthief - 1][ythief + 2] == 2)
+            return true;
+
+        else if ( ythief - 2 >= 0 && ground[xthief][ythief - 2] == 2)
+            return true;
+        else if ( ythief - 1 >= 0 && ground[xthief][ythief - 1] == 2)
+            return true;
+        else if (ythief + 1 < column && ground[xthief][ythief + 1] == 2)
+            return true;
+        else if (ythief + 2 < column && ground[xthief][ythief + 2] == 2)
+            return true;
+
+        else if (xthief + 1 < row && ythief - 2 >= 0 && ground[xthief + 1][ythief - 2] == 2)
+            return true;
+        else if (xthief + 1 < row && ythief - 1 >= 0 && ground[xthief + 1][ythief - 1] == 2)
+            return true;
+        else if (xthief + 1 < row && ground[xthief + 1][ythief] == 2)
+            return true;
+        else if (xthief + 1 < row && ythief + 1 < column && ground[xthief + 1][ythief + 1] == 2)
+            return true;
+        else if (xthief + 1 < row && ythief + 2 < column && ground[xthief + 1][ythief + 2] == 2)
+            return true;
+
+        else if (xthief + 2 < row && ythief - 2 >= 0 && ground[xthief + 2][ythief - 2] == 2)
+            return true;
+        else if (xthief + 2 < row && ythief - 1 >= 0 && ground[xthief + 2][ythief - 1] == 2)
+            return true;
+        else if (xthief + 2 < row && ground[xthief + 2][ythief] == 2)
+            return true;
+        else if (xthief + 2 < row && ythief + 1 < column && ground[xthief + 2][ythief + 1] == 2)
+            return true;
+        else if (xthief + 2 < row && ythief + 2 < column && ground[xthief + 2][ythief + 2] == 2)
+            return true;
+        return false;
+    }
     public boolean checkEmptiness(int x, int y) {
         if (ground[x][y] == 0)
             return true;
