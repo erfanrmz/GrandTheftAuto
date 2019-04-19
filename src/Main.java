@@ -23,6 +23,11 @@ public class Main {
         }
         while (true)
         {
+            if (losSantos.busted(polices))
+            {
+                System.out.println("WASTED");
+                System.exit(0);
+            }
             losSantos.CheckSeen();
             for (int i = 0 ; i < losSantos.getPoliceNumb() ;i++)
                 polices[i].movement(losSantos);
@@ -30,7 +35,7 @@ public class Main {
             losSantos.PrintGround();
             System.out.println("==================================================");
             try {
-                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(5);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -10,6 +10,15 @@ public class Police {
         this.x = x;
         this.y = y;
     }
+
+    public int getLastX() {
+        return lastX;
+    }
+
+    public int getLastY() {
+        return lastY;
+    }
+
     public void movement(Ground ground)
     {
         ground.setGround(x,y,-2);
@@ -90,5 +99,12 @@ public class Police {
         }
 
     }
+
+
+
+
+
+
+
 
 }

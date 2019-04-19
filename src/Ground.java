@@ -61,72 +61,80 @@ public class Ground {
                     c = '-';
                 else if (ground[i][j] == 1)
                     c = 'T';
-                else if (ground[i][j]%2 == 0)
+                else if (ground[i][j] % 2 == 0)
                     c = 'P';
-                System.out.print("|" + c + "|");
+                System.out.print("|" + c);
             }
-            System.out.println();
+            System.out.println("|");
         }
     }
+
     public Boolean CheckSeen() {
         seen = false;
-        if (xthief - 2 >= 0 && ythief - 2 >= 0 && ground[xthief - 2][ythief - 2]%2 == 0)
+        if (xthief - 2 >= 0 && ythief - 2 >= 0 && ground[xthief - 2][ythief - 2] % 2 == 0)
             seen = true;
-        else if (xthief - 2 >= 0 && ythief - 1 >= 0 && ground[xthief - 2][ythief - 1]%2 == 0)
+        else if (xthief - 2 >= 0 && ythief - 1 >= 0 && ground[xthief - 2][ythief - 1] % 2 == 0)
             seen = true;
-        else if (xthief - 2 >= 0 && ground[xthief - 2][ythief]%2 == 0)
+        else if (xthief - 2 >= 0 && ground[xthief - 2][ythief] % 2 == 0)
             seen = true;
-        else if (xthief - 2 >= 0 && ythief + 1 < column && ground[xthief - 2][ythief + 1]%2 == 0)
+        else if (xthief - 2 >= 0 && ythief + 1 < column && ground[xthief - 2][ythief + 1] % 2 == 0)
             seen = true;
-        else if (xthief - 2 >= 0 && ythief + 2 < column && ground[xthief - 2][ythief + 2]%2 == 0)
-            seen = true;
-
-        else if (xthief - 1 >= 0 && ythief - 2 >= 0 && ground[xthief - 1][ythief - 2]%2 == 0)
-            seen = true;
-        else if (xthief - 1 >= 0 && ythief - 1 >= 0 && ground[xthief - 1][ythief - 1]%2 == 0)
-            seen = true;
-        else if (xthief - 1 >= 0 && ground[xthief - 1][ythief]%2 == 0)
-            seen = true;
-        else if (xthief - 1 >= 0 && ythief + 1 < column && ground[xthief - 1][ythief + 1]%2 == 0)
-            seen = true;
-        else if (xthief - 1 >= 0 && ythief + 2 < column && ground[xthief - 1][ythief + 2]%2 == 0)
+        else if (xthief - 2 >= 0 && ythief + 2 < column && ground[xthief - 2][ythief + 2] % 2 == 0)
             seen = true;
 
-        else if ( ythief - 2 >= 0 && ground[xthief][ythief - 2]%2 == 0)
+        else if (xthief - 1 >= 0 && ythief - 2 >= 0 && ground[xthief - 1][ythief - 2] % 2 == 0)
             seen = true;
-        else if ( ythief - 1 >= 0 && ground[xthief][ythief - 1]%2 == 0)
+        else if (xthief - 1 >= 0 && ythief - 1 >= 0 && ground[xthief - 1][ythief - 1] % 2 == 0)
             seen = true;
-        else if (ythief + 1 < column && ground[xthief][ythief + 1]%2 == 0)
+        else if (xthief - 1 >= 0 && ground[xthief - 1][ythief] % 2 == 0)
             seen = true;
-        else if (ythief + 2 < column && ground[xthief][ythief + 2]%2 == 0)
+        else if (xthief - 1 >= 0 && ythief + 1 < column && ground[xthief - 1][ythief + 1] % 2 == 0)
             seen = true;
-
-        else if (xthief + 1 < row && ythief - 2 >= 0 && ground[xthief + 1][ythief - 2]%2 == 0)
-            seen = true;
-        else if (xthief + 1 < row && ythief - 1 >= 0 && ground[xthief + 1][ythief - 1]%2 == 0)
-            seen = true;
-        else if (xthief + 1 < row && ground[xthief + 1][ythief]%2 == 0)
-            seen = true;
-        else if (xthief + 1 < row && ythief + 1 < column && ground[xthief + 1][ythief + 1]%2 == 0)
-            seen = true;
-        else if (xthief + 1 < row && ythief + 2 < column && ground[xthief + 1][ythief + 2]%2 == 0)
+        else if (xthief - 1 >= 0 && ythief + 2 < column && ground[xthief - 1][ythief + 2] % 2 == 0)
             seen = true;
 
-        else if (xthief + 2 < row && ythief - 2 >= 0 && ground[xthief + 2][ythief - 2]%2 == 0)
+        else if (ythief - 2 >= 0 && ground[xthief][ythief - 2] % 2 == 0)
             seen = true;
-        else if (xthief + 2 < row && ythief - 1 >= 0 && ground[xthief + 2][ythief - 1]%2 == 0)
+        else if (ythief - 1 >= 0 && ground[xthief][ythief - 1] % 2 == 0)
             seen = true;
-        else if (xthief + 2 < row && ground[xthief + 2][ythief]%2 == 0)
+        else if (ythief + 1 < column && ground[xthief][ythief + 1] % 2 == 0)
             seen = true;
-        else if (xthief + 2 < row && ythief + 1 < column && ground[xthief + 2][ythief + 1]%2 == 0)
+        else if (ythief + 2 < column && ground[xthief][ythief + 2] % 2 == 0)
             seen = true;
-        else if (xthief + 2 < row && ythief + 2 < column && ground[xthief + 2][ythief + 2]%2 == 0)
+
+        else if (xthief + 1 < row && ythief - 2 >= 0 && ground[xthief + 1][ythief - 2] % 2 == 0)
+            seen = true;
+        else if (xthief + 1 < row && ythief - 1 >= 0 && ground[xthief + 1][ythief - 1] % 2 == 0)
+            seen = true;
+        else if (xthief + 1 < row && ground[xthief + 1][ythief] % 2 == 0)
+            seen = true;
+        else if (xthief + 1 < row && ythief + 1 < column && ground[xthief + 1][ythief + 1] % 2 == 0)
+            seen = true;
+        else if (xthief + 1 < row && ythief + 2 < column && ground[xthief + 1][ythief + 2] % 2 == 0)
+            seen = true;
+
+        else if (xthief + 2 < row && ythief - 2 >= 0 && ground[xthief + 2][ythief - 2] % 2 == 0)
+            seen = true;
+        else if (xthief + 2 < row && ythief - 1 >= 0 && ground[xthief + 2][ythief - 1] % 2 == 0)
+            seen = true;
+        else if (xthief + 2 < row && ground[xthief + 2][ythief] % 2 == 0)
+            seen = true;
+        else if (xthief + 2 < row && ythief + 1 < column && ground[xthief + 2][ythief + 1] % 2 == 0)
+            seen = true;
+        else if (xthief + 2 < row && ythief + 2 < column && ground[xthief + 2][ythief + 2] % 2 == 0)
             seen = true;
         return seen;
     }
-    public boolean checkEmptiness(int x, int y) {
-        if (ground[x][y] == 0)
-            seen = true;
+
+    public Boolean busted(Police[] polices) {
+        for (int i = 0; i < row; i++)
+            for (int j = 0; j < column; j++)
+                if (ground[i][j] % 2 == 1 && ground[i][j] != 1)
+                    return true;
+        for (int i = 0; i < polices.length; i++)
+            if (polices[i].getLastX() == xthief && polices[i].getLastY() == ythief)
+                return true;
         return false;
     }
+
 }
